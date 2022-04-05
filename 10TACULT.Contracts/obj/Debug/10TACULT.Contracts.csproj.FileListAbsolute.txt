@@ -1,0 +1,16 @@
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\10TACULT.Contracts.dll.config
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\10TACULT.Contracts.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\10TACULT.Contracts.pdb
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\EntityFramework.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\EntityFramework.xml
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\obj\Debug\10TACULT.Contracts.csproj.AssemblyReference.cache
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\obj\Debug\10TACULT.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\obj\Debug\10TACULT.Contracts.csproj.CopyComplete
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\obj\Debug\10TACULT.Contracts.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Contracts\obj\Debug\10TACULT.Contracts.pdb

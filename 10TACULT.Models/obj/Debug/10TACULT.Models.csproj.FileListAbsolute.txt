@@ -1,0 +1,16 @@
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Models.dll.config
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Models.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Models.pdb
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\EntityFramework.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\EntityFramework.xml
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\obj\Debug\10TACULT.Models.csproj.AssemblyReference.cache
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\obj\Debug\10TACULT.Models.csproj.CoreCompileInputs.cache
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\obj\Debug\10TACULT.Models.csproj.CopyComplete
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\obj\Debug\10TACULT.Models.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\obj\Debug\10TACULT.Models.pdb
