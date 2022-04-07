@@ -19,6 +19,7 @@ namespace _10TACULT.Data
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<Platform> Platforms { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Developer> Developers { get; set; }
 
 
 

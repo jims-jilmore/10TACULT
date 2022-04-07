@@ -61,6 +61,10 @@
     <Compile Include="Clan_Models\ClanDetail.cs" />
     <Compile Include="Clan_Models\ClanEdit.cs" />
     <Compile Include="Clan_Models\ClanListItem.cs" />
+    <Compile Include="Dev_Models\DevCreate.cs" />
+    <Compile Include="Dev_Models\DevDetail.cs" />
+    <Compile Include="Dev_Models\DevEdit.cs" />
+    <Compile Include="Dev_Models\DevListItem.cs" />
     <Compile Include="Game_Models\GameCreate.cs" />
     <Compile Include="Game_Models\GameDetail.cs" />
     <Compile Include="Game_Models\GameEdit.cs" />
