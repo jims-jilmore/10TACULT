@@ -13,21 +13,19 @@ namespace _10TACULT.Data.Entities
         [Key]
         public int TagID { get; set; }
 
-        //Tie Tag To User Who Created It
+        //Tag Creator
         [ForeignKey("ApplicationUser")]
         public string UserID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(30, ErrorMessage = "Too Many Characters")]
         public string TagName { get; set; } //i.e. Coop, Crossplay, SinglePlayer
 
         [Required]
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Modified { get; set; }
 
-        //Tags Are Directly Linked To A Specific Game
+        //Tag Linked To Specific Game
         [ForeignKey("Game")]
         public int GameID { get; set; }
         public virtual Game Game { get; set; }

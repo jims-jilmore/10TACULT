@@ -13,15 +13,13 @@ namespace _10TACULT.Data.Entities
         [Key]
         public int DevID { get; set; }
 
+        [ForeignKey("ApplicationUser")]
+        public string UserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(50, ErrorMessage = "Too Many Characters")]
         public string DevName { get; set; } 
 
-        //[ForeignKey("Game")]
-        //[InverseProperty(nameof(Game.GameID))]
         public virtual ICollection<Game> Games { get; set; }
-
-        //Developer Can Be Tied To Publisher Depending On Game
     }
 }

@@ -14,13 +14,9 @@ namespace _10TACULT.Data.Entities
         public int SessionID { get; set; }
 
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(50, ErrorMessage = "Too Many Characters")]
         public string SessionTitle { get; set; }
 
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(200, ErrorMessage = "Too Many Characters")]
         public string SessionDesc { get; set; }
 
         [Required]
@@ -41,7 +37,7 @@ namespace _10TACULT.Data.Entities
         public int ClanID { get; set; }
         public virtual Clan Clan { get; set; }
 
-        //Session Can Have Many Members(ApplicationUsers)
+        //Session Will Have Clan Members
         public virtual ICollection<ApplicationUser> Members { get; set; }
 
         [Required]

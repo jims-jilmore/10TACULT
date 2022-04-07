@@ -19,22 +19,16 @@ namespace _10TACULT.Data.Entities
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(50, ErrorMessage = "Too Many Characters")]
         public string ClanName { get; set; }
 
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(200, ErrorMessage = "Too Many Characters")]
         public string ClanDesc { get; set; }
 
-        //Clan Can Have Many Members(ApplicationUsers)
         public virtual ICollection<ApplicationUser> Members { get; set; }
 
         [Required]
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Modified { get; set; }
-
 
     }
 }

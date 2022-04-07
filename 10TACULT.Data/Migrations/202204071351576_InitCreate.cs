@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initCreate : DbMigration
+    public partial class InitCreate : DbMigration
     {
         public override void Up()
         {
@@ -13,8 +13,8 @@
                     {
                         ClanID = c.Int(nullable: false, identity: true),
                         UserID = c.String(maxLength: 128),
-                        ClanName = c.String(nullable: false, maxLength: 50),
-                        ClanDesc = c.String(nullable: false, maxLength: 200),
+                        ClanName = c.String(nullable: false),
+                        ClanDesc = c.String(nullable: false),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),
                         Modified = c.DateTimeOffset(precision: 7),
                     })
@@ -95,16 +95,20 @@
                 c => new
                     {
                         DevID = c.Int(nullable: false, identity: true),
-                        DevName = c.String(nullable: false, maxLength: 50),
+                        UserID = c.String(maxLength: 128),
+                        DevName = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.DevID);
+                .PrimaryKey(t => t.DevID)
+                .ForeignKey("dbo.ApplicationUser", t => t.UserID)
+                .Index(t => t.UserID);
             
             CreateTable(
                 "dbo.Game",
                 c => new
                     {
                         GameID = c.Int(nullable: false, identity: true),
-                        GameTitle = c.String(nullable: false, maxLength: 50),
+                        UserID = c.String(maxLength: 128),
+                        GameTitle = c.String(nullable: false),
                         Genre = c.String(nullable: false),
                         ReleaseDate = c.DateTime(nullable: false),
                         ESRB = c.String(nullable: false),
@@ -114,8 +118,10 @@
                         Modified = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.GameID)
+                .ForeignKey("dbo.ApplicationUser", t => t.UserID)
                 .ForeignKey("dbo.Developer", t => t.DevID, cascadeDelete: true)
                 .ForeignKey("dbo.Publisher", t => t.PublisherID, cascadeDelete: true)
+                .Index(t => t.UserID)
                 .Index(t => t.PublisherID)
                 .Index(t => t.DevID);
             
@@ -124,24 +130,30 @@
                 c => new
                     {
                         PlatformID = c.Int(nullable: false, identity: true),
-                        PlatformName = c.String(nullable: false, maxLength: 25),
+                        UserID = c.String(maxLength: 128),
+                        PlatformName = c.String(nullable: false),
                         PlatformDeveloper = c.String(nullable: false),
                         ReleaseDate = c.DateTime(nullable: false),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),
                         Modified = c.DateTimeOffset(precision: 7),
                     })
-                .PrimaryKey(t => t.PlatformID);
+                .PrimaryKey(t => t.PlatformID)
+                .ForeignKey("dbo.ApplicationUser", t => t.UserID)
+                .Index(t => t.UserID);
             
             CreateTable(
                 "dbo.Publisher",
                 c => new
                     {
                         PublisherID = c.Int(nullable: false, identity: true),
-                        PublisherName = c.String(nullable: false, maxLength: 50),
+                        UserID = c.String(maxLength: 128),
+                        PublisherName = c.String(nullable: false),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),
                         Modified = c.DateTimeOffset(precision: 7),
                     })
-                .PrimaryKey(t => t.PublisherID);
+                .PrimaryKey(t => t.PublisherID)
+                .ForeignKey("dbo.ApplicationUser", t => t.UserID)
+                .Index(t => t.UserID);
             
             CreateTable(
                 "dbo.Tag",
@@ -149,7 +161,7 @@
                     {
                         TagID = c.Int(nullable: false, identity: true),
                         UserID = c.String(maxLength: 128),
-                        TagName = c.String(nullable: false, maxLength: 30),
+                        TagName = c.String(nullable: false),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),
                         Modified = c.DateTimeOffset(precision: 7),
                         GameID = c.Int(nullable: false),
@@ -174,8 +186,8 @@
                 c => new
                     {
                         SessionID = c.Int(nullable: false, identity: true),
-                        SessionTitle = c.String(nullable: false, maxLength: 50),
-                        SessionDesc = c.String(nullable: false, maxLength: 200),
+                        SessionTitle = c.String(nullable: false),
+                        SessionDesc = c.String(nullable: false),
                         SessionDate = c.DateTime(nullable: false),
                         UserID = c.String(maxLength: 128),
                         GameID = c.Int(nullable: false),
@@ -216,9 +228,13 @@
             DropForeignKey("dbo.Tag", "GameID", "dbo.Game");
             DropForeignKey("dbo.Tag", "UserID", "dbo.ApplicationUser");
             DropForeignKey("dbo.Game", "PublisherID", "dbo.Publisher");
+            DropForeignKey("dbo.Publisher", "UserID", "dbo.ApplicationUser");
             DropForeignKey("dbo.PlatformGame", "Game_GameID", "dbo.Game");
             DropForeignKey("dbo.PlatformGame", "Platform_PlatformID", "dbo.Platform");
+            DropForeignKey("dbo.Platform", "UserID", "dbo.ApplicationUser");
             DropForeignKey("dbo.Game", "DevID", "dbo.Developer");
+            DropForeignKey("dbo.Game", "UserID", "dbo.ApplicationUser");
+            DropForeignKey("dbo.Developer", "UserID", "dbo.ApplicationUser");
             DropForeignKey("dbo.ApplicationUser", "Clan_ClanID", "dbo.Clan");
             DropForeignKey("dbo.Clan", "UserID", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
@@ -231,8 +247,12 @@
             DropIndex("dbo.Session", new[] { "UserID" });
             DropIndex("dbo.Tag", new[] { "GameID" });
             DropIndex("dbo.Tag", new[] { "UserID" });
+            DropIndex("dbo.Publisher", new[] { "UserID" });
+            DropIndex("dbo.Platform", new[] { "UserID" });
             DropIndex("dbo.Game", new[] { "DevID" });
             DropIndex("dbo.Game", new[] { "PublisherID" });
+            DropIndex("dbo.Game", new[] { "UserID" });
+            DropIndex("dbo.Developer", new[] { "UserID" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });

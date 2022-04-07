@@ -20,5 +20,5 @@ C:\Users\james\source\repos\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Models.pdb
 C:\Users\james\source\repos\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Models.dll.config
 C:\Users\james\source\repos\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Services.pdb
 C:\Users\james\source\repos\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Services.dll.config
-C:\Users\james\source\repos\10TACULT\10TACULT.Data\obj\Debug\_10TACULT.Data.Migrations.initCreate.resources
+C:\Users\james\source\repos\10TACULT\10TACULT.Data\obj\Debug\_10TACULT.Data.Migrations.InitCreate.resources
 C:\Users\james\source\repos\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.GenerateResource.cache

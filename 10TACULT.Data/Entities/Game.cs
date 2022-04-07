@@ -13,9 +13,11 @@ namespace _10TACULT.Data.Entities
         [Key]
         public int GameID { get; set; }
 
+        [ForeignKey("ApplicationUser")]
+        public string UserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(50, ErrorMessage = "Too Many Characters")]
         public string GameTitle { get; set; }
 
         [Required]
@@ -38,12 +40,9 @@ namespace _10TACULT.Data.Entities
         public virtual Developer Developer { get; set; }
 
         //Game Can Have Many Platforms
-        //[ForeignKey("Platform")]
         public virtual ICollection<Platform> Platforms { get; set; }
 
         //Game Can Have Many Tags
-        //[ForeignKey("Tag")]
-        //[InverseProperty(nameof(Tag.Game))]
         public virtual ICollection<Tag> Tags { get; set; }
 
 

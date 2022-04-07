@@ -13,20 +13,19 @@ namespace _10TACULT.Data.Entities
         [Key]
         public int PlatformID { get; set; }
 
+        [ForeignKey("ApplicationUser")]
+        public string UserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(25, ErrorMessage = "Too Many Characters")]
         public string PlatformName { get; set; }
 
         [Required]
-        public string PlatformDeveloper { get; set; } //Join with Developer Entity?
+        public string PlatformDeveloper { get; set; }
 
         [Required]
         public DateTime ReleaseDate { get; set; }
-
-        //Platforms Have Many Games 
-        //[ForeignKey("Game")]
-        // [InverseProperty(nameof(Game.Platform))]
+ 
         public virtual ICollection<Game> Games { get; set; }
 
         [Required]

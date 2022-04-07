@@ -13,21 +13,14 @@ namespace _10TACULT.Data.Entities
         [Key]
         public int PublisherID { get; set; }
 
+        [ForeignKey("ApplicationUser")]
+        public string UserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         [Required]
-        [MinLength(1, ErrorMessage = "Must Enter At Least 1 Character")]
-        [MaxLength(50, ErrorMessage = "Too Many Characters")]
         public string PublisherName { get; set; }
 
-        //Publisher Can Have Many Games
-        [ForeignKey("Game")]
-        //[InverseProperty(nameof(Game.GameID))]
         public virtual ICollection<Game> Games { get; set; }
-
-        //Publisher Can Have Many Developers
-        //i.e. Activision (Sledgehammer, Treyarch, RavenSoftware)
-        //[ForeignKey("Developer")]
-        //[InverseProperty(nameof(Developer.DevID))]
-        // public virtual ICollection<Developer> Developers { get; set; }
 
         [Required]
         public DateTimeOffset Created { get; set; }
