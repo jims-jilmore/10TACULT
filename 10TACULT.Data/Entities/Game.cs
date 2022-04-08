@@ -45,7 +45,6 @@ namespace _10TACULT.Data.Entities
         //Game Can Have Many Tags
         public virtual ICollection<Tag> Tags { get; set; }
 
-
         [Required]
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Modified { get; set; }

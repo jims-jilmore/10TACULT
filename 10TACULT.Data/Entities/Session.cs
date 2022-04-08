@@ -13,6 +13,11 @@ namespace _10TACULT.Data.Entities
         [Key]
         public int SessionID { get; set; }
 
+        //Session Will Have A Creator
+        [ForeignKey("ApplicationUser")]
+        public string UserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         [Required]
         public string SessionTitle { get; set; }
 
@@ -21,11 +26,6 @@ namespace _10TACULT.Data.Entities
 
         [Required]
         public DateTime SessionDate { get; set; }
-
-        //Session Will Have A Creator
-        [ForeignKey("ApplicationUser")]
-        public string UserID { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
 
         //Session Will Have A Game
         [ForeignKey("Game")]

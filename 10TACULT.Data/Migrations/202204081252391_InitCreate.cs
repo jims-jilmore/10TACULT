@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitCommit : DbMigration
+    public partial class InitCreate : DbMigration
     {
         public override void Up()
         {
@@ -186,10 +186,10 @@
                 c => new
                     {
                         SessionID = c.Int(nullable: false, identity: true),
+                        UserID = c.String(maxLength: 128),
                         SessionTitle = c.String(nullable: false),
                         SessionDesc = c.String(nullable: false),
                         SessionDate = c.DateTime(nullable: false),
-                        UserID = c.String(maxLength: 128),
                         GameID = c.Int(nullable: false),
                         ClanID = c.Int(nullable: false),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),

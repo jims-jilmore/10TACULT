@@ -20,8 +20,6 @@ C:\Users\james\source\repos\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Models.pdb
 C:\Users\james\source\repos\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Models.dll.config
 C:\Users\james\source\repos\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Services.pdb
 C:\Users\james\source\repos\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Services.dll.config
-C:\Users\james\source\repos\10TACULT\10TACULT.Data\obj\Debug\_10TACULT.Data.Migrations.InitCreate.resources
-C:\Users\james\source\repos\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.GenerateResource.cache
 C:\Users\Jimmy\Source\Repos\jims-jilmore\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Data.dll.config
 C:\Users\Jimmy\Source\Repos\jims-jilmore\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Data.dll
 C:\Users\Jimmy\Source\Repos\jims-jilmore\10TACULT\10TACULT.Data\bin\Debug\10TACULT.Data.pdb
@@ -46,3 +44,5 @@ C:\Users\Jimmy\Source\Repos\jims-jilmore\10TACULT\10TACULT.Data\obj\Debug\10TACU
 C:\Users\Jimmy\Source\Repos\jims-jilmore\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.pdb
 C:\Users\Jimmy\Source\Repos\jims-jilmore\10TACULT\10TACULT.Data\obj\Debug\_10TACULT.Data.Migrations.InitCommit.resources
 C:\Users\Jimmy\Source\Repos\jims-jilmore\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.GenerateResource.cache
+C:\Users\james\source\repos\10TACULT\10TACULT.Data\obj\Debug\_10TACULT.Data.Migrations.InitCreate.resources
+C:\Users\james\source\repos\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.GenerateResource.cache
