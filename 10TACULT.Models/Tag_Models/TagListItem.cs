@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace _10TACULT.Models.Tag_Models
 {
-    internal class TagListItem
+    public class TagListItem
     {
+        public int TagID { get; set; }
+        public string TagName { get; set; }
+        public DateTimeOffset Created { get; set; }
     }
 }

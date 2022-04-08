@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace _10TACULT.Models.Session_Models
 {
-    internal class SessionEdit
+    public class SessionEdit
     {
+        public int SessionID { get; set; }
+        public string SessionTitle { get; set; }
+        public string SessionDesc { get; set; }
+        public DateTime SessionDate { get; set; }
     }
 }

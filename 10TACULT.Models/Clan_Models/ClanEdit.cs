@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace _10TACULT.Models.Clan_Models
 {
-    internal class ClanEdit
+    public class ClanEdit
     {
+        public int ClanID { get; set; }
+        public string ClanName { get; set; }
+        public string ClanDesc { get; set; }
+
     }
 }

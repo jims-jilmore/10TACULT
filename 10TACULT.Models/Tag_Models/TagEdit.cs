@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace _10TACULT.Models.Tag_Models
 {
-    internal class TagEdit
+    public class TagEdit
     {
+        public int TagID { get; set; }
+        public string TagName { get; set; }
     }
 }

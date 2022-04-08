@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace _10TACULT.Models.Dev_Models
 {
-    internal class DevEdit
+    public class DevEdit
     {
+        public int DevID { get; set; }
+        public string DevName { get; set; }
     }
 }

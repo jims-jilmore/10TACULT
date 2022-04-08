@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _10TACULT.Models.Game_Models
 {
-    internal class GameListItem
+    public class GameListItem
     {
+        public int GameID { get; set; }
+
+        [Display(Name = "Title")]
+        public string GameTitle { get; set; }
+        public DateTimeOffset Created { get; set; }
     }
 }
