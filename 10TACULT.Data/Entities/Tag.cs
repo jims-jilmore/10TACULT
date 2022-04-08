@@ -29,9 +29,5 @@ namespace _10TACULT.Data.Entities
         [ForeignKey("Game")]
         public int GameID { get; set; }
         public virtual Game Game { get; set; }
-
-
-
-
     }
 }

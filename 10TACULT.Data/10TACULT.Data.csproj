@@ -66,9 +66,9 @@
     <Compile Include="Entities\Session.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202204071351576_InitCreate.cs" />
-    <Compile Include="Migrations\202204071351576_InitCreate.designer.cs">
-      <DependentUpon>202204071351576_InitCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202204080030314_InitCommit.cs" />
+    <Compile Include="Migrations\202204080030314_InitCommit.designer.cs">
+      <DependentUpon>202204080030314_InitCommit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,8 +88,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204071351576_InitCreate.resx">
-      <DependentUpon>202204071351576_InitCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204080030314_InitCommit.resx">
+      <DependentUpon>202204080030314_InitCommit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

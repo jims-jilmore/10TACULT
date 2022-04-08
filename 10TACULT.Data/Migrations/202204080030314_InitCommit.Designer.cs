@@ -7,13 +7,13 @@ namespace _10TACULT.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitCreate : IMigrationMetadata
+    public sealed partial class InitCommit : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitCommit));
         
         string IMigrationMetadata.Id
         {
-            get { return "202204071351576_InitCreate"; }
+            get { return "202204080030314_InitCommit"; }
         }
         
         string IMigrationMetadata.Source
