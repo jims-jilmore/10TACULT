@@ -46,8 +46,8 @@ namespace _10TACULT.Data.Entities
         public virtual ICollection<Tag> Tags { get; set; }
 
         [Required]
-        public DateTimeOffset Created { get; set; }
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset CreatedUTC { get; set; }
+        public DateTimeOffset? ModifiedUTC { get; set; }
 
     }
 }

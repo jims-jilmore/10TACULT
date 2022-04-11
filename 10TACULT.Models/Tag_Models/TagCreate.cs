@@ -12,6 +12,7 @@ namespace _10TACULT.Models.Tag_Models
         [Required]
         [MinLength(1, ErrorMessage = "Tag Must Be At Least 1 Character")]
         [MaxLength(25, ErrorMessage = "Tag Not To Exceed 25 Characters")]
+        [Display(Name = "Tag")]
         public string TagName { get; set; }
     }
 }

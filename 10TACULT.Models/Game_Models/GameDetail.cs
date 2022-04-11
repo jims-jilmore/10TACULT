@@ -22,7 +22,10 @@ namespace _10TACULT.Models.Game_Models
         [Display(Name = "ESRB Rating")]
         public string ESRB { get; set; }
 
+        [Display(Name = "Created")]
         public DateTimeOffset Created { get; set; }
+
+        [Display(Name = "Modified")]
         public DateTimeOffset? Modified { get; set; }
     }
 }

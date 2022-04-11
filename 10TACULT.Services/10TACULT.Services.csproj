@@ -57,11 +57,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClanService.cs" />
+    <Compile Include="DevService.cs" />
+    <Compile Include="GameService.cs" />
+    <Compile Include="PlatformService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublisherService.cs" />
+    <Compile Include="SessionService.cs" />
+    <Compile Include="TagService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\10TACULT.Contracts\10TACULT.Contracts.csproj">
+      <Project>{90f74d21-1878-4ef1-8a4f-3f8e7a32c8fb}</Project>
+      <Name>10TACULT.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\10TACULT.Data\10TACULT.Data.csproj">
+      <Project>{3975efda-4b74-4305-9606-9e823d73ffe3}</Project>
+      <Name>10TACULT.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\10TACULT.Models\10TACULT.Models.csproj">
+      <Project>{6f482bb7-804f-4cd4-8714-0b806c3f2f2b}</Project>
+      <Name>10TACULT.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -20,7 +20,10 @@ namespace _10TACULT.Models.Platform_Models
         [Display(Name = "Released")]
         public DateTime ReleaseDate { get; set; }
 
-        public DateTimeOffset Created { get; set; }
-        public DateTimeOffset? Modified { get; set; }
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUTC { get; set; }
+
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUTC { get; set; }
     }
 }

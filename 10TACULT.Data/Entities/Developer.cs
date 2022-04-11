@@ -21,5 +21,10 @@ namespace _10TACULT.Data.Entities
         public string DevName { get; set; } 
 
         public virtual ICollection<Game> Games { get; set; }
+
+        [Required]
+        public DateTimeOffset CreatedUTC { get; set; }
+        public DateTimeOffset? ModifiedUTC { get; set; }
+
     }
 }

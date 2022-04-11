@@ -21,13 +21,14 @@ namespace _10TACULT.Data.Entities
         [Required]
         public string TagName { get; set; } //i.e. Coop, Crossplay, SinglePlayer
 
-        [Required]
-        public DateTimeOffset Created { get; set; }
-        public DateTimeOffset? Modified { get; set; }
-
         //Tag Linked To Specific Game
         [ForeignKey("Game")]
         public int GameID { get; set; }
         public virtual Game Game { get; set; }
+
+        [Required]
+        public DateTimeOffset CreatedUTC { get; set; }
+        public DateTimeOffset? ModifiedUTC { get; set; }
+
     }
 }

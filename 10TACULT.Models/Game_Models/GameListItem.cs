@@ -13,6 +13,8 @@ namespace _10TACULT.Models.Game_Models
 
         [Display(Name = "Title")]
         public string GameTitle { get; set; }
+
+        [Display(Name = "Created")]
         public DateTimeOffset Created { get; set; }
     }
 }

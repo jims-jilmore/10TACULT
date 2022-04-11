@@ -66,31 +66,11 @@
     <Compile Include="Entities\Session.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202204081252391_InitCreate.cs" />
-    <Compile Include="Migrations\202204081252391_InitCreate.designer.cs">
-      <DependentUpon>202204081252391_InitCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\10TACULT.Models\10TACULT.Models.csproj">
-      <Project>{6f482bb7-804f-4cd4-8714-0b806c3f2f2b}</Project>
-      <Name>10TACULT.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\10TACULT.Services\10TACULT.Services.csproj">
-      <Project>{67a370f1-c1ab-444f-a849-9dac07a2b6b8}</Project>
-      <Name>10TACULT.Services</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204081252391_InitCreate.resx">
-      <DependentUpon>202204081252391_InitCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

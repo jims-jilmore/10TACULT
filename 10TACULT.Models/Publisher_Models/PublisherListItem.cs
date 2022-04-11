@@ -14,6 +14,7 @@ namespace _10TACULT.Models.Publisher_Models
         [Display(Name = "Publisher")]
         public string PublisherName { get; set; }
 
-        public DateTimeOffset Created { get; set; }
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUTC { get; set; }
     }
 }

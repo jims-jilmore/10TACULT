@@ -14,7 +14,8 @@ namespace _10TACULT.Models.Dev_Models
         [Display(Name = "Developer")]
         public string DevName { get; set; }
 
-        public DateTimeOffset Created { get; set; }
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUTC { get; set; }
 
     }
 }

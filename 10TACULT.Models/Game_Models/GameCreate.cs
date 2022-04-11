@@ -12,6 +12,7 @@ namespace _10TACULT.Models.Game_Models
         [Required]
         [MinLength(1, ErrorMessage = "Title Must Be At Least 1 Character")]
         [MaxLength(25, ErrorMessage = "Name Not To Exceed 50 Characters")]
+        [Display(Name = "Title")]
         public string GameTitle { get; set; }
 
         [Required]
@@ -20,9 +21,11 @@ namespace _10TACULT.Models.Game_Models
         public string Genre { get; set; }
         
         [Required]
+        [Display(Name = "Released")]
         public DateTime ReleaseDate { get; set; }
 
         [Required]
+        [Display(Name = "ESRB Rating")]
         public string ESRB { get; set; }
     }
 }

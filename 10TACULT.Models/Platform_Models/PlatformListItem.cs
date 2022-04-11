@@ -14,7 +14,8 @@ namespace _10TACULT.Models.Platform_Models
         [Display(Name = "Platform")]
         public string PlatformName { get; set; }
 
-        public DateTimeOffset Created { get; set; }
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUTC { get; set; }
 
     }
 }

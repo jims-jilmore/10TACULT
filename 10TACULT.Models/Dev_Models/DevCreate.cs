@@ -12,6 +12,7 @@ namespace _10TACULT.Models.Dev_Models
         [Required]
         [MinLength(1, ErrorMessage = "Name Must Be At Least 1 Character")]
         [MaxLength(50, ErrorMessage = "Name Not To Exceed 50 Characters")]
+        [Display(Name = "Developer")]
         public string DevName { get; set; }
 
     }
