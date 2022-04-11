@@ -15,6 +15,6 @@ namespace _10TACULT.Models.Game_Models
         public string GameTitle { get; set; }
 
         [Display(Name = "Created")]
-        public DateTimeOffset Created { get; set; }
+        public DateTimeOffset CreatedUTC { get; set; }
     }
 }

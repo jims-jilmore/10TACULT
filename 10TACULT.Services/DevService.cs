@@ -1,4 +1,5 @@
 ﻿using _10TACULT.Data;
+using _10TACULT.Data.Entities;
 using _10TACULT.Models.Dev_Models;
 using System;
 using System.Collections.Generic;
@@ -26,9 +27,68 @@ namespace _10TACULT.Services
                     {
                         DevID = d.DevID,
                         DevName = d.DevName,
-                        //Created = d.
+                        CreatedUTC = d.CreatedUTC
                     });
                     return query.ToArray();
+            }
+        }
+
+        public DevDetail GetDevByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Developers
+                    .Single(d => d.DevID == id && d.UserID == _userID);
+                return
+                    new DevDetail
+                    {
+                        DevID = entity.DevID,
+                        DevName = entity.DevName,
+                        CreatedUTC = entity.CreatedUTC,
+                        ModifiedUTC = entity.ModifiedUTC
+                    };
+            }
+        }
+
+        public bool CreateDev(DevCreate model)
+        {
+            var entity = new Developer()
+            {
+                UserID = _userID,
+                DevName = model.DevName,
+                CreatedUTC = DateTimeOffset.UtcNow
+            };
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Developers.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool UpdateDev(DevEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Developers
+                    .Single(d => d.DevID == model.DevID && d.UserID == _userID);
+
+                entity.DevName = model.DevName;
+                entity.ModifiedUTC = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1; 
+            }
+        }
+
+        public bool DeleteDev(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Developers
+                    .Single(d => d.DevID == id && d.UserID == _userID);
+
+                ctx.Developers.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
