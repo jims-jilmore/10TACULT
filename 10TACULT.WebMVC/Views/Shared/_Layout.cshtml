@@ -9,8 +9,8 @@
 
 </head>
 
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body style="background-image: url(https://imgur.com/AkstGqV.jpg); background-size: cover; background-repeat: no-repeat; min-width: 100%; min-height: 100%; overflow-y: hidden; overflow-x: hidden; background-position: center; ">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="opacity: 0.5">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,18 +31,20 @@
                     <li>@Html.ActionLink("Developer", "Index", "Dev")</li>
                     <li>@Html.ActionLink("Tag", "Index", "Tag")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+            
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
+        @*<hr />*@
+        <div class="container" style="display: flex; min-height: 100vh; flex-direction: column; justify-content: space-between;">
+        <footer style="color: crimson;" >
             <p>&copy; @DateTime.Now.Year - 10TACULT</p>
         </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
