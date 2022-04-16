@@ -62,6 +62,7 @@ namespace _10TACULT.Services
                 SessionDate = model.SessionDate,
                 CreatedUTC = DateTimeOffset.UtcNow
             };
+            //Need the association with a Clan
 
             using (var ctx = new ApplicationDbContext())
             {

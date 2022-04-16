@@ -49,14 +49,15 @@ namespace _10TACULT.Services
             }
         }
 
-        public bool CreateTag(TagCreate model)
+        public bool CreateTag(TagCreate model, int id)
         {
             var entity = new Tag()
             {
                 TagName = model.TagName,
                 CreatedUTC = DateTimeOffset.UtcNow
+                GameID = id
             };
-
+            // Tie Tag To Game
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Tags.Add(entity);

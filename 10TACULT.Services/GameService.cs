@@ -63,6 +63,7 @@ namespace _10TACULT.Services
                 ESRB = model.ESRB,
                 CreatedUTC = DateTimeOffset.UtcNow
             };
+            //Need the Association with a Developer
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Games.Add(entity);
