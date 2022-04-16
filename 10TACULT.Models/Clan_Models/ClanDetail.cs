@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10TACULT.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace _10TACULT.Models.Clan_Models
 
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUTC { get; set; }
+
+        public ICollection<ApplicationUser> Members { get; set; }
 
     }
 }

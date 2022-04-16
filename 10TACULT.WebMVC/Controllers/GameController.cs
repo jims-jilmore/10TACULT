@@ -27,17 +27,20 @@ namespace _10TACULT.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(GameCreate model)
+        public ActionResult Create(GameCreate model, int pubID, int devID)
         {
             if (ModelState.IsValid)
             {
                 var service = CreateGameService();
-                if (service.CreateGame(model))
+                if (service.CreateGame(model, pubID, devID))
                 {
+                    TempData["Save"] = "Game Successfully Added...";
                     return RedirectToAction("Index");
                 }
+                TempData["Save"] = "Unable To Add Game!!!";
                 return View(model);
             }
+            TempData["Save"] = "Invalid Model State";
             return View(model);
         }
 
@@ -72,7 +75,11 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateGameService();
             if (service.DeleteGame(id))
             {
-                ////
+                TempData["Save"] = "Game Successfully Removed...";
+            }
+            else
+            {
+                TempData["Save"] = "Unable To Delete Game";
             }
             return RedirectToAction("Index");
         }
@@ -103,8 +110,13 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateGameService();
             if (service.UpdateGame(model))
             {
-                ////
+                TempData["Save"] = "Game Successfully Updated...";
             }
+            else
+            {
+                TempData["Save"] = "Unable To Update Game!!!";
+            }
+            TempData["Save"] = "Invalid Model State";
             return RedirectToAction("Index");
         }
 

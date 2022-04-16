@@ -34,10 +34,13 @@ namespace _10TACULT.WebMVC.Controllers
                 var service = CreateSessionService();
                 if (service.CreateSession(model))
                 {
+                    TempData["Save"] = "Session Successfully Created...";
                     return RedirectToAction("Index");
                 }
+                TempData["Save"] = "Unable To Create Session!!!";
                 return View(model);
             }
+            TempData["Save"] = "Invalid Model State";
             return View(model);
         }
 
@@ -72,7 +75,11 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateSessionService();
             if (service.DeleteSession(id))
             {
-                ////
+                TempData["Save"] = "Session Successfully Removed...";
+            }
+            else
+            {
+                TempData["Save"] = "Unable To Remove Session!!!";
             }
             return RedirectToAction("Index");
         }
@@ -102,8 +109,13 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateSessionService();
             if (service.UpdateSession(model))
             {
-                ////
+                TempData["Save"] = "Session Successfully Updated...";
             }
+            else
+            {
+                TempData["Save"] = "Unable To Update Session!!!";
+            }
+            TempData["Save"] = "Invalid Model State";
             return RedirectToAction("Index");
         }
 

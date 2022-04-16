@@ -15,7 +15,7 @@ namespace _10TACULT.Data.Entities
 
         //Clan Will Have A Creator
         [ForeignKey("ApplicationUser")]
-        public string UserID { get; set; }
+        public string FounderID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]

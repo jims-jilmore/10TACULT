@@ -19,5 +19,17 @@ namespace _10TACULT.Data
         }
         [Required]
         public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        public string ProfileName { get; set; }
+
+        [Required]
+        public string Location { get; set; }
+        
+
+
     }
 }

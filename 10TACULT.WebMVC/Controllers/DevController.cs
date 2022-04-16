@@ -34,10 +34,13 @@ namespace _10TACULT.WebMVC.Controllers
                 var service = CreateDevService();
                 if (service.CreateDev(model))
                 {
+                    TempData["Save"] = "Developer Successfully Added...";
                     return RedirectToAction("Index");
                 }
+                TempData["Save"] = "Unable To Add Developer!!!";
                 return View(model);
             }
+            TempData["Save"] = "Invalid Model State";
             return View(model);
         }
 
@@ -72,7 +75,11 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateDevService();
             if (service.DeleteDev(id))
             {
-                ////
+                TempData["Save"] = "Developer Successfully Removed...";
+            }
+            else
+            {
+                TempData["Save"] = "Unable To Remove Developer!!!";
             }
             return RedirectToAction("Index");
         }
@@ -100,8 +107,13 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateDevService();
             if (service.UpdateDev(model))
             {
-                ////
+                TempData["Save"] = "Developer Successfully Updated...";
             }
+            else
+            {
+                TempData["Save"] = "Unable To Update Developer!!!";
+            }
+            TempData["Save"] = "Invalid Model State";
             return RedirectToAction("Index");
         }
 

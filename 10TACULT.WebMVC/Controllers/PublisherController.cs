@@ -34,10 +34,13 @@ namespace _10TACULT.WebMVC.Controllers
                 var service = CreatePublisherService();
                 if (service.CreatePublisher(model))
                 {
+                    TempData["Save"] = "Publisher Successfully Added...";
                     return RedirectToAction("Index");
                 }
+                TempData["Save"] = "Unable To Add Publisher!!!";
                 return View(model);
             }
+            TempData["Save"] = "Invalid Model State";
             return View(model);
         }
 
@@ -72,7 +75,11 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreatePublisherService();
             if (service.DeletePublisher(id))
             {
-                ////
+                TempData["Save"] = "Publisher Successfully Removed...";
+            }
+            else
+            {
+                TempData["Save"] = "Unable To Remove Publisher";
             }
             return RedirectToAction("Index");
         }
@@ -100,8 +107,13 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreatePublisherService();
             if (service.UpdatePublisher(model))
             {
-                ////
+                TempData["Save"] = "Publisher Successfully Updated...";
             }
+            else
+            {
+                TempData["Save"] = "Unable To Update Publisher!!!";
+            }
+            TempData["Save"] = "Invalid Model State";
             return RedirectToAction("Index");
         }
 

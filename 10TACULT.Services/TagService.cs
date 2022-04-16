@@ -49,20 +49,24 @@ namespace _10TACULT.Services
             }
         }
 
-        public bool CreateTag(TagCreate model, int id)
+        public bool CreateTag(TagCreate model, int gameID)
         {
+            var ctx = new ApplicationDbContext();
             var entity = new Tag()
             {
                 TagName = model.TagName,
-                CreatedUTC = DateTimeOffset.UtcNow
-                GameID = id
+                CreatedUTC = DateTimeOffset.UtcNow,
+                Game = ctx.Games.Single(g => g.GameID == gameID)
             };
+            ctx.Tags.Add(entity);
+            return ctx.SaveChanges() == 1;
+
             // Tie Tag To Game
-            using (var ctx = new ApplicationDbContext())
-            {
-                ctx.Tags.Add(entity);
-                return ctx.SaveChanges() == 1; 
-            }
+            //using (var ctx = new ApplicationDbContext())
+            //{
+            //    ctx.Tags.Add(entity);
+            //    return ctx.SaveChanges() == 1; 
+            //}
         }
 
         public bool UpdateTag(TagEdit model)

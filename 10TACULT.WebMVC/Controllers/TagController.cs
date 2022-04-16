@@ -27,17 +27,20 @@ namespace _10TACULT.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TagCreate model)
+        public ActionResult Create(TagCreate model, int gameID)
         {
             if (ModelState.IsValid)
             {
                 var service = CreateTagService();
-                if (service.CreateTag(model))
+                if (service.CreateTag(model, gameID))
                 {
+                    TempData["Save"] = "Tag Successfully Created...";
                     return RedirectToAction("Index");
                 }
+                TempData["Save"] = "Unable To Create Tag!!!";
                 return View(model);
             }
+            TempData["Save"] = "Invalid Model State";
             return View(model);
         }
 
@@ -72,7 +75,11 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateTagService();
             if (service.DeleteTag(id))
             {
-                ////
+                TempData["Save"] = "Tag Successfully Removed";
+            }
+            else
+            {
+                TempData["Save"] = "Unable To Remove Tag!!!";
             }
             return RedirectToAction("Index");
         }
@@ -100,8 +107,13 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateTagService();
             if (service.UpdateTag(model))
             {
-                ////
+                TempData["Save"] = "Tag Successfully Updated...";
             }
+            else
+            {
+                TempData["Save"] = "Unable To Update Tag!!!";
+            }
+            TempData["Save"] = "Invalid Model State";
             return RedirectToAction("Index");
         }
 

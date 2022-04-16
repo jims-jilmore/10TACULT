@@ -37,7 +37,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Clans
-                    .Single(c => c.ClanID == id && c.UserID == _userID);
+                    .Single(c => c.ClanID == id);
                 return
                     new ClanDetail
                     {
@@ -45,7 +45,8 @@ namespace _10TACULT.Services
                         ClanName = entity.ClanName,
                         ClanDesc = entity.ClanDesc,
                         CreatedUTC = entity.CreatedUTC,
-                        ModifiedUTC = entity.ModifiedUTC
+                        ModifiedUTC = entity.ModifiedUTC,
+                        Members = entity.Members
                     };
             }
         }
@@ -54,10 +55,11 @@ namespace _10TACULT.Services
         {
             var entity = new Clan()
             {
-                UserID = _userID,
+                FounderID = _userID,
                 ClanName = model.ClanName,
                 ClanDesc = model.ClanDesc,
-                CreatedUTC = DateTimeOffset.UtcNow
+                CreatedUTC = DateTimeOffset.UtcNow,
+                Members = new List<ApplicationUser>()
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -71,12 +73,13 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Clans
-                    .Single(c => c.ClanID == model.ClanID && c.UserID == _userID);
+                    .Single(c => c.ClanID == model.ClanID && c.FounderID == _userID);
 
                 entity.ClanName = model.ClanName;
                 entity.ClanDesc = model.ClanDesc;
                 entity.ModifiedUTC = DateTimeOffset.UtcNow;
-
+                entity.Members = model.Members.ToList(); // Not 100% Sure On This <<<----<<<
+                
                 return ctx.SaveChanges() == 1; 
             }
         }
@@ -86,12 +89,29 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Clans
-                    .Single(c => c.ClanID == id && c.UserID == _userID);
+                    .Single(c => c.ClanID == id && c.FounderID == _userID);
 
                 ctx.Clans.Remove(entity);
 
                 return ctx.SaveChanges() == 1; 
             }
         }
+
+        public bool AddClanMember(string memberID, int clanID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                ApplicationUser newMember = ctx.Users
+                    .Single(m => m.Id == memberID);
+
+                Clan clanToJoin = ctx.Clans
+                    .Single(m => m.ClanID == clanID);
+
+                clanToJoin.Members.Add(newMember);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

@@ -34,10 +34,13 @@ namespace _10TACULT.WebMVC.Controllers
                 var service = CreateClanService();
                 if (service.CreateClan(model))
                 {
+                    TempData["Save"] = "Clan Successfully Created...";
                     return RedirectToAction("Index");
                 }
+                TempData["Save"] = "Unable To Create Clan!!!";
                 return View(model);
             }
+            TempData["Save"] = "Invalid Model State";
             return View(model);
         }
 
@@ -72,7 +75,11 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateClanService();
             if (service.DeleteClan(id))
             {
-                ////
+                TempData["Save"] = "Clan Successfully Removed...";
+            }
+            else
+            {
+                TempData["Save"] = "Unable To Remove Clan!!!";
             }
             return RedirectToAction("Index");
         }
@@ -85,7 +92,8 @@ namespace _10TACULT.WebMVC.Controllers
             {
                 ClanID = clan.ClanID,
                 ClanName = clan.ClanName,
-                ClanDesc = clan.ClanDesc
+                ClanDesc = clan.ClanDesc,
+                Members = clan.Members
             };
             if (model is null)
             {
@@ -101,8 +109,13 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreateClanService();
             if (service.UpdateClan(model))
             {
-                ////
+                TempData["Save"] = "Clan Successfully Updated...";
             }
+            else
+            {
+                TempData["Save"] = "Unable To Update Clan!!!";
+            }
+            TempData["Save"] = "Invalid Model State";
             return RedirectToAction("Index");
         }
 

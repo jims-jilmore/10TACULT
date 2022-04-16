@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10TACULT.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace _10TACULT.Models.Clan_Models
 
         [Display(Name = "Description")]
         public string ClanDesc { get; set; }
+
+        public ICollection<ApplicationUser> Members { get; set; }
 
     }
 }

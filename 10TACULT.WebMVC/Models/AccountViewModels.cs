@@ -64,9 +64,17 @@ namespace _10TACULT.WebMVC.Models
 
     public class RegisterViewModel
     {
-        [Required]
-        [Display(Name = "First Name")]
+        [Required, Display(Name = "First Name")]
         public string FirstName { get; set; }
+
+        [Required, Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required, Display(Name = "Profile Name")]
+        public string ProfileName { get; set; }
+
+        [Required]
+        public string Location { get; set; }
 
         [Required]
         [Display(Name = "Username")]

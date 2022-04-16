@@ -241,38 +241,20 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Clan\Index.cshtml" />
-    <Content Include="Views\Game\Index.cshtml" />
-    <Content Include="Views\Session\Index.cshtml" />
-    <Content Include="Views\Publisher\Index.cshtml" />
-    <Content Include="Views\Tag\Index.cshtml" />
-    <Content Include="Views\Dev\Index.cshtml" />
     <Content Include="Views\Platform\Index.cshtml" />
-    <Content Include="Views\Clan\Create.cshtml" />
-    <Content Include="Views\Clan\Details.cshtml" />
-    <Content Include="Views\Clan\Edit.cshtml" />
-    <Content Include="Views\Dev\Create.cshtml" />
-    <Content Include="Views\Dev\Details.cshtml" />
-    <Content Include="Views\Dev\Edit.cshtml" />
-    <Content Include="Views\Game\Create.cshtml" />
-    <Content Include="Views\Game\Details.cshtml" />
-    <Content Include="Views\Game\Edit.cshtml" />
     <Content Include="Views\Platform\Create.cshtml" />
     <Content Include="Views\Platform\Details.cshtml" />
     <Content Include="Views\Platform\Edit.cshtml" />
-    <Content Include="Views\Publisher\Create.cshtml" />
-    <Content Include="Views\Publisher\Details.cshtml" />
-    <Content Include="Views\Publisher\Edit.cshtml" />
-    <Content Include="Views\Session\Create.cshtml" />
-    <Content Include="Views\Session\Details.cshtml" />
-    <Content Include="Views\Session\Edit.cshtml" />
-    <Content Include="Views\Tag\Create.cshtml" />
-    <Content Include="Views\Tag\Details.cshtml" />
-    <Content Include="Views\Tag\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
+    <Folder Include="Views\Clan\" />
+    <Folder Include="Views\Dev\" />
+    <Folder Include="Views\Game\" />
+    <Folder Include="Views\Publisher\" />
+    <Folder Include="Views\Session\" />
+    <Folder Include="Views\Tag\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

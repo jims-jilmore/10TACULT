@@ -34,10 +34,13 @@ namespace _10TACULT.WebMVC.Controllers
                 var service = CreatePlatformService();
                 if (service.CreatePlatform(model))
                 {
+                    TempData["Save"] = "Platform Successfully Added...";
                     return RedirectToAction("Index");
                 }
+                TempData["Save"] = "Unable To Add Platform!!!";
                 return View(model);
             }
+            TempData["Save"] = "Invalid Model State";
             return View(model);
         }
 
@@ -72,7 +75,11 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreatePlatformService();
             if (service.DeletePlatform(id))
             {
-                ////
+                TempData["Save"] = "Platform Successfully Removed...";
+            }
+            else
+            {
+                TempData["Save"] = "Unable To Remove Platform!!!";
             }
             return RedirectToAction("Index");
         }
@@ -102,8 +109,13 @@ namespace _10TACULT.WebMVC.Controllers
             var service = CreatePlatformService();
             if (service.UpdatePlatform(model))
             {
-                ////
+                TempData["Save"] = "Platform Successfully Updated...";
             }
+            else
+            {
+                TempData["Save"] = "Unable To Update Platform!!!";
+            }
+            TempData["Save"] = "Invalid Model State";
             return RedirectToAction("Index");
         }
 
