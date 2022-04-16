@@ -38,7 +38,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Games
-                    .Single(g => g.GameID == id && g.UserID == _userID);
+                    .Single(g => g.GameID == id && g.CreatorID == _userID);
                 return new GameDetail
                 {
                     GameID = entity.GameID,
@@ -46,6 +46,10 @@ namespace _10TACULT.Services
                     Genre = entity.Genre,
                     ReleaseDate = entity.ReleaseDate,
                     ESRB = entity.ESRB,
+                    Publisher = entity.Publisher,
+                    Developer = entity.Developer,
+                    Platforms = entity.Platforms,
+                    Tags = entity.Tags,
                     CreatedUTC = entity.CreatedUTC,
                     ModifiedUTC = entity.ModifiedUTC
                 };
@@ -57,7 +61,7 @@ namespace _10TACULT.Services
             var ctx = new ApplicationDbContext();
             var entity = new Game()
             {
-                UserID = _userID,
+                CreatorID = _userID,
                 GameTitle = model.GameTitle,
                 Genre = model.Genre,
                 ReleaseDate = model.ReleaseDate,
@@ -66,22 +70,12 @@ namespace _10TACULT.Services
                 Publisher = ctx.Publishers.Single(p => p.PublisherID == pubID),
                 Developer = ctx.Developers.Single(d => d.DevID == devID),
                 Tags = new List<Tag>(),
-                Platforms = new List<Platform>()
+                Platforms = new List<Platform>() // Will Probably Change Once Platform Is Updated
             };
-            ctx.Games.Add(entity);
-            return ctx.SaveChanges() == 1;
 
-            //Need the Association with a Developer
-            //Need the Association with a Publisher
-            //using (var ctx = new ApplicationDbContext())
-            //{
-            //    ctx.Games.Add(entity);
-            //    entity.Publisher = ctx.Publishers
-            //        .Single(p => p.PublisherID == pubID);
-            //    entity.Developer = ctx.Developers
-            //        .Single(d => d.DevID == devID);
-            //    return ctx.SaveChanges() == 1;
-            //}
+            ctx.Games.Add(entity);
+
+            return ctx.SaveChanges() == 1;
         }
 
         public bool UpdateGame(GameEdit model)
@@ -89,12 +83,16 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Games
-                    .Single(g => g.GameID == model.GameID && g.UserID == _userID);
+                    .Single(g => g.GameID == model.GameID && g.CreatorID == _userID);
 
                 entity.GameTitle = model.GameTitle;
                 entity.Genre = model.Genre;
                 entity.ReleaseDate = model.ReleaseDate;
                 entity.ESRB = model.ESRB;
+                entity.Publisher = model.Publisher;
+                entity.Developer = model.Developer;
+                entity.Platforms = model.Platforms.ToList();
+                entity.Tags = model.Tags.ToList();
                 entity.ModifiedUTC = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1; 
@@ -106,11 +104,12 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Games
-                    .Single(g => g.GameID == id && g.UserID == _userID);
+                    .Single(g => g.GameID == id && g.CreatorID == _userID);
 
                 ctx.Games.Remove(entity);
                 return ctx.SaveChanges() == 1; 
             }
         }
+
     }
 }

@@ -52,9 +52,9 @@ C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\bin\Debug\Ent
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.AssemblyReference.cache
-C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\_10TACULT.Data.Migrations.InitCreate.resources
-C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.GenerateResource.cache
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.CoreCompileInputs.cache
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.CopyComplete
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.dll
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.pdb
+C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\_10TACULT.Data.Migrations.InitCreate.resources
+C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Data\obj\Debug\10TACULT.Data.csproj.GenerateResource.cache

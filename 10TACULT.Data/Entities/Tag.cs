@@ -15,13 +15,12 @@ namespace _10TACULT.Data.Entities
 
         //Tag Creator
         [ForeignKey("ApplicationUser")]
-        public string UserID { get; set; }
+        public string CreatorID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]
         public string TagName { get; set; } //i.e. Coop, Crossplay, SinglePlayer
 
-        //Tag Linked To Specific Game
         [ForeignKey("Game")]
         public int GameID { get; set; }
         public virtual Game Game { get; set; }

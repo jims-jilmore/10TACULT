@@ -101,17 +101,53 @@ namespace _10TACULT.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                ApplicationUser newMember = ctx.Users
+                var member = ctx.Users
                     .Single(m => m.Id == memberID);
 
-                Clan clanToJoin = ctx.Clans
+                var clan = ctx.Clans
                     .Single(m => m.ClanID == clanID);
 
-                clanToJoin.Members.Add(newMember);
+                clan.Members.Add(member);
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
+        public bool RemoveClanMember(string memberID, int clanID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var member = ctx.Users.Single(m => m.Id == memberID);
+                var clan = ctx.Clans.Single(c => c.ClanID == clanID);
+
+                clan.Members.Remove(member);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        //public ICollection<ApplicationUser> GetClanMembers(int clanID)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity = ctx.Clans
+        //            .Single(c => c.ClanID == clanID);
+        //        return entity.Members.ToList();
+        //    }
+        //}
+
+        public IEnumerable<ClanMemberListItem> GetAllClanMembers()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Clans
+                    .Select(c => new ClanMemberListItem()
+                    {
+                        MemberID = c.ApplicationUser.Id,
+                        MemberName = c.ApplicationUser.ProfileName
+                    });
+                return query.ToArray();
+            }
+        }
     }
 }

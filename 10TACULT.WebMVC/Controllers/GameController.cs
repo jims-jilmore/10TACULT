@@ -94,7 +94,11 @@ namespace _10TACULT.WebMVC.Controllers
                 GameTitle = game.GameTitle,
                 Genre = game.Genre,
                 ReleaseDate = game.ReleaseDate,
-                ESRB = game.ESRB
+                ESRB = game.ESRB,
+                Publisher = game.Publisher,
+                Developer = game.Developer,
+                Platforms = game.Platforms,
+                Tags = game.Tags
             };
             if (model is null)
             {

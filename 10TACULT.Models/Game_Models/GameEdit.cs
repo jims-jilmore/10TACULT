@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10TACULT.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,6 +21,12 @@ namespace _10TACULT.Models.Game_Models
 
         [Display(Name = "ESRB Rating")]
         public string ESRB { get; set; }
+
+        public Publisher Publisher { get; set; }
+        public Developer Developer { get; set; }
+
+        public ICollection<Platform> Platforms { get; set; }
+        public ICollection<Tag> Tags { get; set; }
 
     }
 }

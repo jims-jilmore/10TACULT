@@ -38,7 +38,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Tags
-                    .Single(t => t.TagID == id && t.UserID == _userID);
+                    .Single(t => t.TagID == id && t.CreatorID == _userID);
 
                 return new TagDetail
                 {
@@ -61,12 +61,6 @@ namespace _10TACULT.Services
             ctx.Tags.Add(entity);
             return ctx.SaveChanges() == 1;
 
-            // Tie Tag To Game
-            //using (var ctx = new ApplicationDbContext())
-            //{
-            //    ctx.Tags.Add(entity);
-            //    return ctx.SaveChanges() == 1; 
-            //}
         }
 
         public bool UpdateTag(TagEdit model)
@@ -74,7 +68,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Tags
-                    .Single(t => t.TagID == model.TagID && t.UserID == _userID);
+                    .Single(t => t.TagID == model.TagID && t.CreatorID == _userID);
 
                 entity.TagName = model.TagName;
                 entity.ModifiedUTC = DateTimeOffset.UtcNow;
@@ -88,12 +82,13 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Tags
-                    .Single(t => t.TagID == id && t.UserID == _userID);
+                    .Single(t => t.TagID == id && t.CreatorID == _userID);
 
                 ctx.Tags.Remove(entity);
 
                 return ctx.SaveChanges() == 1; 
             }
         }
+
     }
 }

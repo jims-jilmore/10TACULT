@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10TACULT.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace _10TACULT.Models.Publisher_Models
 
         [Display(Name = "Publisher")]
         public string PublisherName { get; set; }
+
+        public ICollection<Game> Games { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUTC { get; set; }

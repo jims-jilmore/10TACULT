@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10TACULT.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace _10TACULT.Models.Platform_Models
 {
     public class PlatformDetail
     {
+        //Many Platforms Can Have Many Games?
         public int PlatformID { get; set; }
 
         [Display(Name = "Platform")]
@@ -19,6 +21,8 @@ namespace _10TACULT.Models.Platform_Models
 
         [Display(Name = "Released")]
         public DateTime ReleaseDate { get; set; }
+
+        public ICollection<Game> Games { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUTC { get; set; }

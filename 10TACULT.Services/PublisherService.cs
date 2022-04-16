@@ -38,11 +38,12 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Publishers
-                    .Single(p => p.PublisherID == id && p.UserID == _userID);
+                    .Single(p => p.PublisherID == id);
                 return new PublisherDetail
                 {
                     PublisherID = entity.PublisherID,
                     PublisherName = entity.PublisherName,
+                    Games = entity.Games,
                     CreatedUTC = entity.CreatedUTC
                 };
             }
@@ -53,6 +54,7 @@ namespace _10TACULT.Services
             var entity = new Publisher()
             {
                 PublisherName = model.PublisherName,
+                Games = new List<Game>(),
                 CreatedUTC = DateTimeOffset.UtcNow,
             };
 
@@ -68,7 +70,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Publishers
-                    .Single(p => p.PublisherID == model.PublisherID && p.UserID == _userID);
+                    .Single(p => p.PublisherID == model.PublisherID);
 
                 entity.PublisherName = model.PublisherName;
                 entity.ModifiedUTC = DateTimeOffset.UtcNow;
@@ -82,7 +84,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Publishers
-                    .Single(p => p.PublisherID == id && p.UserID == _userID);
+                    .Single(p => p.PublisherID == id && p.CreatorID == _userID);
 
                 ctx.Publishers.Remove(entity);
 

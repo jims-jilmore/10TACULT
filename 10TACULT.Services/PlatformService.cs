@@ -45,6 +45,7 @@ namespace _10TACULT.Services
                     PlatformName = entity.PlatformName,
                     PlatformDeveloper = entity.PlatformDeveloper,
                     ReleaseDate = entity.ReleaseDate,
+                    Games = entity.Games,
                     CreatedUTC = entity.CreatedUTC,
                     ModifiedUTC = entity.ModifiedUTC
                 };
@@ -58,6 +59,7 @@ namespace _10TACULT.Services
                 PlatformName = model.PlatformName,
                 PlatformDeveloper = model.PlatformDeveloper,
                 ReleaseDate = model.ReleaseDate,
+                Games = new List<Game>(),
                 CreatedUTC = DateTimeOffset.UtcNow
             };
             using (var ctx = new ApplicationDbContext())

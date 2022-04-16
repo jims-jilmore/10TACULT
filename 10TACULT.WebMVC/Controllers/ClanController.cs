@@ -119,6 +119,41 @@ namespace _10TACULT.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        //Add Method(s) for manipulating Clan Members. Do I need a specific list clan member method/model?
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddClanMember(string memberID, int clanID) 
+            //Might need a member model? Or is it just the application user model? ClanMemberListItem?
+        {
+            var service = CreateClanService();
+            if (service.AddClanMember(memberID, clanID))
+            {
+                TempData["Save"] = "Clan Member Successfully Added...";
+            }
+            else
+            {
+                TempData["Save"] = "Unable To Add Clan Member!!!";
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveClanMember(string memberID, int clanID)
+        {
+            var service = CreateClanService();
+            if (service.RemoveClanMember(memberID, clanID))
+            {
+                TempData["Save"] = "Clan Member Successfully Removed...";
+            }
+            else
+            {
+                TempData["Save"] = "Unable to Remove Clan Member!!!";
+            }
+            return RedirectToAction("Index");
+        }
+
         public ClanService CreateClanService()
         {
             return new ClanService(User.Identity.GetUserId());

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10TACULT.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,6 +22,13 @@ namespace _10TACULT.Models.Game_Models
 
         [Display(Name = "ESRB Rating")]
         public string ESRB { get; set; }
+
+        public Publisher Publisher { get; set; } //virtual Publisher?
+
+        public Developer Developer { get; set; } //virtual Developer?
+
+        public ICollection<Platform> Platforms { get; set; }  //virtual?
+        public ICollection<Tag> Tags { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUTC { get; set; }
