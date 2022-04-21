@@ -241,18 +241,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Dev\Details.cshtml" />
+    <Content Include="Views\Dev\Create.cshtml" />
+    <Content Include="Views\Dev\Index.cshtml" />
+    <Content Include="Views\Dev\Delete.cshtml" />
+    <Content Include="Views\Dev\Edit.cshtml" />
+    <Content Include="Views\Publisher\Create.cshtml" />
+    <Content Include="Views\Publisher\Details.cshtml" />
+    <Content Include="Views\Publisher\Index.cshtml" />
+    <Content Include="Views\Publisher\Delete.cshtml" />
+    <Content Include="Views\Publisher\Edit.cshtml" />
     <Content Include="Views\Platform\Index.cshtml" />
     <Content Include="Views\Platform\Create.cshtml" />
     <Content Include="Views\Platform\Details.cshtml" />
+    <Content Include="Views\Platform\Delete.cshtml" />
     <Content Include="Views\Platform\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
     <Folder Include="Views\Clan\" />
-    <Folder Include="Views\Dev\" />
     <Folder Include="Views\Game\" />
-    <Folder Include="Views\Publisher\" />
     <Folder Include="Views\Session\" />
     <Folder Include="Views\Tag\" />
   </ItemGroup>

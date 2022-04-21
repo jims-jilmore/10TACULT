@@ -38,7 +38,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Developers
-                    .Single(d => d.DevID == id && d.UserID == _userID);
+                    .Single(d => d.DevID == id);
                 return
                     new DevDetail
                     {
@@ -54,7 +54,7 @@ namespace _10TACULT.Services
         {
             var entity = new Developer()
             {
-                UserID = _userID,
+                CreatorID = _userID,
                 DevName = model.DevName,
                 CreatedUTC = DateTimeOffset.UtcNow
             };
@@ -70,7 +70,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Developers
-                    .Single(d => d.DevID == model.DevID && d.UserID == _userID);
+                    .Single(d => d.DevID == model.DevID);
 
                 entity.DevName = model.DevName;
                 entity.ModifiedUTC = DateTimeOffset.UtcNow;
@@ -84,7 +84,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Developers
-                    .Single(d => d.DevID == id && d.UserID == _userID);
+                    .Single(d => d.DevID == id);
 
                 ctx.Developers.Remove(entity);
 

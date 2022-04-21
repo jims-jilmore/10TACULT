@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10TACULT.Models", "10TACULT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10TACULT.Services", "10TACULT.Services\10TACULT.Services.csproj", "{67A370F1-C1AB-444F-A849-9DAC07A2B6B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10TACULT.Contracts", "10TACULT.Contracts\10TACULT.Contracts.csproj", "{90F74D21-1878-4EF1-8A4F-3F8E7A32C8FB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{67A370F1-C1AB-444F-A849-9DAC07A2B6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67A370F1-C1AB-444F-A849-9DAC07A2B6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67A370F1-C1AB-444F-A849-9DAC07A2B6B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90F74D21-1878-4EF1-8A4F-3F8E7A32C8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90F74D21-1878-4EF1-8A4F-3F8E7A32C8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90F74D21-1878-4EF1-8A4F-3F8E7A32C8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90F74D21-1878-4EF1-8A4F-3F8E7A32C8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

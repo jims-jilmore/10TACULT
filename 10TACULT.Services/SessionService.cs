@@ -40,7 +40,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Sessions
-                    .Single(s => s.SessionID == id && s.UserID == _userID);
+                    .Single(s => s.SessionID == id);
                 return new SessionDetail()
                 {
                     SessionID = entity.SessionID,
@@ -76,7 +76,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Sessions
-                    .Single(s => s.SessionID == model.SessionID && s.UserID == _userID);
+                    .Single(s => s.SessionID == model.SessionID);
 
                 entity.SessionTitle = model.SessionTitle;
                 entity.SessionDesc = model.SessionDesc;
@@ -91,7 +91,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Sessions
-                    .Single(s => s.SessionID == id && s.UserID == _userID);
+                    .Single(s => s.SessionID == id);
 
                 ctx.Sessions.Remove(entity);
 

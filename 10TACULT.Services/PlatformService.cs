@@ -38,7 +38,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Platforms
-                    .Single(p => p.PlatformID == id && p.UserID == _userID);
+                    .Single(p => p.PlatformID == id);
                 return new PlatformDetail
                 {
                     PlatformID = entity.PlatformID,
@@ -74,7 +74,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Platforms
-                    .Single(p => p.PlatformID == model.PlatformID && p.UserID == _userID);
+                    .Single(p => p.PlatformID == model.PlatformID);
 
                 entity.PlatformName = model.PlatformName;
                 entity.PlatformDeveloper = model.PlatformDeveloper;
@@ -90,7 +90,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Platforms
-                    .Single(p => p.PlatformID == id && p.UserID == _userID);
+                    .Single(p => p.PlatformID == id);
 
                 ctx.Platforms.Remove(entity);
 

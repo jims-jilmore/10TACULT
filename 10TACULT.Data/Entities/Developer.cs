@@ -14,7 +14,7 @@ namespace _10TACULT.Data.Entities
         public int DevID { get; set; }
 
         [ForeignKey("ApplicationUser")]
-        public string UserID { get; set; }
+        public string CreatorID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]

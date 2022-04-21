@@ -49,3 +49,6 @@ C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Models\obj\Debug\1
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Data.dll
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Data.pdb
 C:\Users\Jimmy\source\repos\GeneralStoreMVC\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Data.dll.config
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Data.dll
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Data.pdb
+C:\Users\james\source\repos\10TACULT\10TACULT.Models\bin\Debug\10TACULT.Data.dll.config

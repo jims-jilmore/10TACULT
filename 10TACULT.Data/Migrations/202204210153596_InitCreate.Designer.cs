@@ -13,7 +13,7 @@ namespace _10TACULT.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202204161718183_InitCreate"; }
+            get { return "202204210153596_InitCreate"; }
         }
         
         string IMigrationMetadata.Source

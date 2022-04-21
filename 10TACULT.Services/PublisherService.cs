@@ -84,7 +84,7 @@ namespace _10TACULT.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Publishers
-                    .Single(p => p.PublisherID == id && p.CreatorID == _userID);
+                    .Single(p => p.PublisherID == id);
 
                 ctx.Publishers.Remove(entity);
 

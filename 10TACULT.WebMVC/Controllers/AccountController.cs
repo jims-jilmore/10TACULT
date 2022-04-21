@@ -152,7 +152,14 @@ namespace _10TACULT.WebMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName };
+                var user = new ApplicationUser 
+                { UserName = model.Email, 
+                    Email = model.Email, 
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Location = model.Location,
+                    ProfileName = model.ProfileName,
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

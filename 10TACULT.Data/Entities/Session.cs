@@ -15,7 +15,7 @@ namespace _10TACULT.Data.Entities
 
         //Session Will Have A Creator
         [ForeignKey("ApplicationUser")]
-        public string UserID { get; set; }
+        public string CreatorID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]
