@@ -78,7 +78,7 @@ namespace _10TACULT.Services
                 entity.ClanName = model.ClanName;
                 entity.ClanDesc = model.ClanDesc;
                 entity.ModifiedUTC = DateTimeOffset.UtcNow;
-                entity.Members = model.Members.ToList(); // Not 100% Sure On This <<<----<<<
+                entity.Members = model.Members;
                 
                 return ctx.SaveChanges() == 1; 
             }

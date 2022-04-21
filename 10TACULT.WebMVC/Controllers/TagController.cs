@@ -1,4 +1,5 @@
-﻿using _10TACULT.Models.Tag_Models;
+﻿using _10TACULT.Data;
+using _10TACULT.Models.Tag_Models;
 using _10TACULT.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -12,6 +13,7 @@ namespace _10TACULT.WebMVC.Controllers
     [Authorize]
     public class TagController : Controller
     {
+        
         // GETALL: Tag
         public ActionResult Index()
         {
@@ -22,17 +24,25 @@ namespace _10TACULT.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            var ctx = new ApplicationDbContext();
+            TempData["Games"] = ctx.Games
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.GameTitle,
+                    Value = g.GameID.ToString()
+                }).ToArray();
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TagCreate model, int gameID)
+        public ActionResult Create(TagCreate model)
         {
+
             if (ModelState.IsValid)
             {
                 var service = CreateTagService();
-                if (service.CreateTag(model, gameID))
+                if (service.CreateTag(model))
                 {
                     TempData["Save"] = "Tag Successfully Created...";
                     return RedirectToAction("Index");
@@ -117,10 +127,13 @@ namespace _10TACULT.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
+
         public TagService CreateTagService()
         {
             return new TagService(User.Identity.GetUserId());
         }
+
+        
 
 
     }

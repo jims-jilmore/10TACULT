@@ -256,14 +256,22 @@
     <Content Include="Views\Platform\Details.cshtml" />
     <Content Include="Views\Platform\Delete.cshtml" />
     <Content Include="Views\Platform\Edit.cshtml" />
+    <Content Include="Views\Clan\Index.cshtml" />
+    <Content Include="Views\Clan\Create.cshtml" />
+    <Content Include="Views\Clan\Details.cshtml" />
+    <Content Include="Views\Clan\Delete.cshtml" />
+    <Content Include="Views\Clan\Edit.cshtml" />
+    <Content Include="Views\Tag\Index.cshtml" />
+    <Content Include="Views\Tag\Details.cshtml" />
+    <Content Include="Views\Tag\Delete.cshtml" />
+    <Content Include="Views\Tag\Edit.cshtml" />
+    <Content Include="Views\Tag\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
-    <Folder Include="Views\Clan\" />
     <Folder Include="Views\Game\" />
     <Folder Include="Views\Session\" />
-    <Folder Include="Views\Tag\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

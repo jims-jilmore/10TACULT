@@ -1,0 +1,58 @@
+﻿@model _10TACULT.Models.Clan_Models.ClanDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClanDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClanID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClanID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClanName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClanName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClanDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClanDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUTC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUTC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClanID}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

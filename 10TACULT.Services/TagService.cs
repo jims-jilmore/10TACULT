@@ -1,5 +1,6 @@
 ﻿using _10TACULT.Data;
 using _10TACULT.Data.Entities;
+using _10TACULT.Models.Game_Models;
 using _10TACULT.Models.Tag_Models;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,20 @@ namespace _10TACULT.Services
             _userID = userID;
         }
 
-        public IEnumerable<TagListItem> GetAllTags()
+        public IEnumerable<GameListItem> GetAllGames()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Games
+                    .Select(g => new GameListItem()
+                    {
+                        GameTitle = g.GameTitle
+                    });
+                return query.ToArray();
+            }
+        }
+
+            public IEnumerable<TagListItem> GetAllTags()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -49,14 +63,14 @@ namespace _10TACULT.Services
             }
         }
 
-        public bool CreateTag(TagCreate model, int gameID)
+        public bool CreateTag(TagCreate model)
         {
             var ctx = new ApplicationDbContext();
             var entity = new Tag()
             {
                 TagName = model.TagName,
+                Game = model.Game,
                 CreatedUTC = DateTimeOffset.UtcNow,
-                Game = ctx.Games.Single(g => g.GameID == gameID)
             };
             ctx.Tags.Add(entity);
             return ctx.SaveChanges() == 1;
