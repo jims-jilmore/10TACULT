@@ -1,4 +1,6 @@
-﻿using _10TACULT.Models.Game_Models;
+﻿using _10TACULT.Data;
+using _10TACULT.Models.Dev_Models;
+using _10TACULT.Models.Game_Models;
 using _10TACULT.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -22,17 +24,32 @@ namespace _10TACULT.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            var ctx = new ApplicationDbContext();
+
+            TempData["Devs"] = ctx.Developers
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.DevName,
+                    Value = g.DevID.ToString()
+                }).ToArray();
+            TempData["Pubs"] = ctx.Publishers
+                .Select(p => new SelectListItem()
+                {
+                    Text = p.PublisherName,
+                    Value = p.PublisherID.ToString()
+                }).ToArray();
+
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(GameCreate model, int pubID, int devID)
+        public ActionResult Create(GameCreate model)
         {
             if (ModelState.IsValid)
             {
                 var service = CreateGameService();
-                if (service.CreateGame(model, pubID, devID))
+                if (service.CreateGame(model))
                 {
                     TempData["Save"] = "Game Successfully Added...";
                     return RedirectToAction("Index");

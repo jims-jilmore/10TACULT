@@ -266,11 +266,12 @@
     <Content Include="Views\Tag\Delete.cshtml" />
     <Content Include="Views\Tag\Edit.cshtml" />
     <Content Include="Views\Tag\Create.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
-    <Folder Include="Views\Game\" />
     <Folder Include="Views\Session\" />
   </ItemGroup>
   <ItemGroup>

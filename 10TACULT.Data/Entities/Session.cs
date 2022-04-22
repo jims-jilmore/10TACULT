@@ -13,7 +13,6 @@ namespace _10TACULT.Data.Entities
         [Key]
         public int SessionID { get; set; }
 
-        //Session Will Have A Creator
         [ForeignKey("ApplicationUser")]
         public string CreatorID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
@@ -27,17 +26,14 @@ namespace _10TACULT.Data.Entities
         [Required]
         public DateTime SessionDate { get; set; }
 
-        //Session Will Have A Game
         [ForeignKey("Game")]
         public int GameID { get; set; }
         public virtual Game Game { get; set; }
 
-        //Session Will Have A Clan
         [ForeignKey("Clan")]
         public int ClanID { get; set; }
         public virtual Clan Clan { get; set; }
 
-        //Session Will Have Clan Members
         public virtual ICollection<ApplicationUser> Members { get; set; }
 
         [Required]

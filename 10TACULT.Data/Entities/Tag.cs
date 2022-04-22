@@ -13,7 +13,6 @@ namespace _10TACULT.Data.Entities
         [Key]
         public int TagID { get; set; }
 
-        //Tag Creator
         [ForeignKey("ApplicationUser")]
         public string CreatorID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }

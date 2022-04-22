@@ -29,20 +29,16 @@ namespace _10TACULT.Data.Entities
         [Required]
         public string ESRB { get; set; }
 
-        //Game Has Publisher (i.e. BANDAI NAMCO)
         [ForeignKey("Publisher")]
         public int PublisherID { get; set; }
         public virtual Publisher Publisher { get; set; }
 
-        //Game Has Developer (i.e. FROM SOFTWARE)
         [ForeignKey("Developer")]
         public int DevID { get; set; }
         public virtual Developer Developer { get; set; }
 
-        //Game Can Have Many Platforms
         public virtual ICollection<Platform> Platforms { get; set; }
 
-        //Game Can Have Many Tags
         public virtual ICollection<Tag> Tags { get; set; }
 
         [Required]

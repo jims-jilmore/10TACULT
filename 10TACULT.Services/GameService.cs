@@ -56,7 +56,7 @@ namespace _10TACULT.Services
             }
         }
 
-        public bool CreateGame(GameCreate model, int pubID, int devID)
+        public bool CreateGame(GameCreate model)
         {
             var ctx = new ApplicationDbContext();
             var entity = new Game()
@@ -67,8 +67,8 @@ namespace _10TACULT.Services
                 ReleaseDate = model.ReleaseDate,
                 ESRB = model.ESRB,
                 CreatedUTC = DateTimeOffset.UtcNow,
-                Publisher = ctx.Publishers.Single(p => p.PublisherID == pubID),
-                Developer = ctx.Developers.Single(d => d.DevID == devID),
+                Publisher = model.Publisher,
+                Developer = model.Developer,
                 Tags = new List<Tag>(),
                 Platforms = new List<Platform>() // Will Probably Change Once Platform Is Updated
             };

@@ -25,12 +25,14 @@ namespace _10TACULT.WebMVC.Controllers
         public ActionResult Create()
         {
             var ctx = new ApplicationDbContext();
+
             TempData["Games"] = ctx.Games
                 .Select(g => new SelectListItem()
                 {
                     Text = g.GameTitle,
                     Value = g.GameID.ToString()
                 }).ToArray();
+
             return View();
         }
 

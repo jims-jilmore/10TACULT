@@ -7,11 +7,11 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
+}
+    < class="form-horizontal">
         <h4>TagCreate</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -23,12 +23,16 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.DropDownListFor(m => m.Game, ViewData["Games"] as IEnumerable<SelectListItem>)
-            <div class="col-md-10">
-            </div>
-        </div>
-
+       <div class="form-group">
+           <div class="col-md-10">
+              @Html.DropDownListFor(model => model.Game, TempData["Games"] as IEnumerable<SelectListItem>, null, new { @class = "form-control"})
+        <button type="submit">Add Tag</button>
+           </div>
+       </div>      
+           
+            
+        
+     <div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
